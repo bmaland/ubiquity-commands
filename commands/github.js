@@ -18,9 +18,11 @@ makeSearchCommand({
       var numToDisplay = 3;
       var repos = data.repositories.splice(0, numToDisplay);
       var template = '{for repo in repos}'
-                   + '<div class="gresult">'
-                   + '<div><strong><a href="${repo.url}">${repo.name}</a></strong></div>'
-                   + '<xul:description class="gresult-content">${repo.description}</xul:description>'
+                   + '<div class="gresult"><div>'
+                   + '<strong><a href="${repo.url}">${repo.name}</a></strong> '
+                   + '&ndash; <small>By <a href="http://github.com/${repo.owner}">${repo.owner}</a> '
+                   + '(${repo.watchers} watchers)</small>'
+                   + '</div><xul:description class="gresult-content">${repo.description}</xul:description>'
                    + '</div>'
                    + '{/for}';
       pblock.innerHTML = CmdUtils.renderTemplate(template, {repos: repos});
