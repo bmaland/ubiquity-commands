@@ -1,11 +1,13 @@
 makeSearchCommand({
   homepage: "http://ubiquity.chrononaut.net/",
-  author: { name: "Bjørn Arild Mæland", email: "bjorn.maeland@gmail.com"},
+  author: { name: "Bjørn Arild Mæland", email: "bjorn.maeland@gmail.com" },
+  contributors: [ "Bjørn Arild Mæland" ],
   license: "MIT",
   name: "GitHub",
   url: "http://github.com/search?q={QUERY}",
   icon: "http://github.com/favicon.ico",
   description: "Searches GitHub for your words.",
+
   preview: function(pblock, directObject) {
     var searchTerm = directObject.text;
     var pTemplate = "Searches GitHub for <b>${query}</b>";
